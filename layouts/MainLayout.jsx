@@ -1,9 +1,13 @@
+import TopBar from "../components/layout/TopBar";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-background">
+
+      <TopBar />
+
       <Navbar />
 
       <main className="flex-1">
@@ -11,6 +15,7 @@ const MainLayout = ({ children }) => {
       </main>
 
       <Footer />
+
     </div>
   );
 };
