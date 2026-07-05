@@ -5,36 +5,35 @@ import {
   HeartPulse,
 } from "lucide-react";
 
+
+import logo from "../../assets/images/logos/brands/medilinklogo.png";
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
 
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        {/* Logo */}
+       {/* Logo */}
+<Link
+  to="/"
+  className="flex items-center gap-3"
+>
+  <img
+    src={logo}
+    alt="MediLink Medical Supplies"
+    className="h-14 w-auto"
+  />
 
-        <Link
-          to="/"
-          className="flex items-center gap-3"
-        >
-          <HeartPulse
-            size={36}
-            className="text-cyan-600"
-          />
+  {/* <div>
+    <h1 className="text-2xl font-bold text-[#005EB8] leading-none">
+      MediLink
+    </h1>
 
-          <div>
-
-            <h1 className="text-2xl font-bold text-[#005EB8] leading-none">
-              MediLink
-            </h1>
-
-            <p className="text-xs text-gray-500">
-              Medical Supplies
-            </p>
-
-          </div>
-
-        </Link>
+    <p className="text-xs text-gray-500">
+      Medical Supplies
+    </p>
+  </div> */}
+</Link>
 
         {/* Navigation */}
 
