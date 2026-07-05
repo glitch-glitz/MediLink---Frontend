@@ -8,6 +8,7 @@ import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
 
+
 const AppRoutes = () => {
   return (
     <BrowserRouter>

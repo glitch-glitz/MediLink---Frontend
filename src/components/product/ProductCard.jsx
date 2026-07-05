@@ -1,7 +1,10 @@
 import { ShoppingCart, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../store/CartContext";
 
 const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
+
   const whatsappMessage = encodeURIComponent(
     `Hello MediLink, I'm interested in "${product.name}". Kindly provide more information and a quotation.`
   );
@@ -39,7 +42,8 @@ const ProductCard = ({ product }) => {
         <div className="mt-5 space-y-3">
 
           <button
-            className="w-full bg-blue-700 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-800"
+            onClick={() => addToCart(product)}
+            className="w-full bg-blue-700 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-800 transition"
           >
             <ShoppingCart size={18} />
             Add to Cart
@@ -49,7 +53,7 @@ const ProductCard = ({ product }) => {
             href={`https://wa.me/254700000000?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full border border-green-600 text-green-700 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-green-50"
+            className="w-full border border-green-600 text-green-700 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-green-50 transition"
           >
             <MessageCircle size={18} />
             Request Quote
