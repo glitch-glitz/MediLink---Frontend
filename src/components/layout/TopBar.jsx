@@ -13,7 +13,7 @@ const TopBar = () => {
 
           <div className="flex items-center gap-2">
             <Phone size={16} />
-            <span>+254 700 000 000</span>
+            <span>+254 142 6293343</span>
           </div>
 
           <div className="flex items-center gap-2">
