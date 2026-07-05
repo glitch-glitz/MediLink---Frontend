@@ -21,7 +21,7 @@ const Navbar = () => {
   <img
     src={logo}
     alt="MediLink Medical Supplies"
-    className="h-14 w-auto"
+    className="h-20 w-auto"
   />
 
   {/* <div>

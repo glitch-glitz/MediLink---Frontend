@@ -48,7 +48,7 @@ const Hero = () => {
 
               <Link
                 to="/category/all"
-                className="bg-white text-primary px-6 py-3 rounded-xl font-semibold"
+                className="bg-white text-[#005EB8] px-6 py-3 rounded-xl font-semibold"
               >
                 Shop Products
               </Link>
