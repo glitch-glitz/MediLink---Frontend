@@ -4,7 +4,7 @@ import HeroImage from "./HeroImage";
 
 const Hero = () => {
   return (
-    <section className="bg-primary text-white">
+    <section className="bg-[#005EB8] text-white">
       <div className="max-w-7xl mx-auto px-6 py-20">
 
         <div className="grid lg:grid-cols-2 items-center gap-16">
