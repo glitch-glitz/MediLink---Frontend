@@ -5,7 +5,7 @@ const CallToAction = () => {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-primary rounded-3xl overflow-hidden">
+        <div className="bg-[#005EB8] rounded-3xl overflow-hidden">
           <div className="px-8 py-16 lg:px-20 lg:py-20 text-center text-white">
             <span className="bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold">
               Ready to Get Started?
@@ -28,7 +28,7 @@ const CallToAction = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
               <Link
                 to="/category/all"
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
+                className="inline-flex items-center justify-center gap-2 bg-[#005EB8] text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
               >
                 Shop Products
                 <ArrowRight size={20} />

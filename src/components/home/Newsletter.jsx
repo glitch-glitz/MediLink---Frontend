@@ -4,7 +4,7 @@ const Newsletter = () => {
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-primary rounded-3xl px-8 py-16 lg:px-20 text-center text-white">
+        <div className="bg-[#005EB8] text-white rounded-3xl px-8 py-16 lg:px-20 text-center text-white">
           {/* Icon */}
           <div className="w-20 h-20 mx-auto rounded-full bg-secondary/20 flex items-center justify-center mb-8">
             <Mail size={38} className="text-secondary" />
