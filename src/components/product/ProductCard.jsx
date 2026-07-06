@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../store/CartContext";
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, removeFromCart, cart } = useCart();
+
+  // 🔥 normalize ID (fixes list + single product mismatch)
+  const productId = product?.id || product?._id;
+
+  const isInCart = cart?.some(
+    (item) => item.id === productId
+  );
 
   const whatsappMessage = encodeURIComponent(
     `Hello MediLink, I'm interested in "${product.name}". Kindly provide more information and a quotation.`
@@ -12,7 +19,6 @@ const ProductCard = ({ product }) => {
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
 
-      {/* Product Image */}
       <Link to={`/products/${product.slug}`}>
         <img
           src={product.image}
@@ -42,11 +48,19 @@ const ProductCard = ({ product }) => {
         <div className="mt-5 space-y-3">
 
           <button
-            onClick={() => addToCart(product)}
-            className="w-full bg-blue-700 text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-800 transition"
+            onClick={() =>
+              isInCart
+                ? removeFromCart(productId)
+                : addToCart(product)
+            }
+            className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 transition ${
+              isInCart
+                ? "bg-red-600 hover:bg-red-700 text-white"
+                : "bg-blue-700 hover:bg-blue-800 text-white"
+            }`}
           >
             <ShoppingCart size={18} />
-            Add to Cart
+            {isInCart ? "Remove from Cart" : "Add to Cart"}
           </button>
 
           <a
