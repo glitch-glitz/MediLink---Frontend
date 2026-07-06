@@ -7,6 +7,7 @@ import Category from "../pages/Category";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
+import About from "../pages/About";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route path="/category/:slug" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/about" element={<About />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>

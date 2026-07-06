@@ -13,15 +13,15 @@ const Cart = () => {
   totalItems,
 } = useCart();
 
-  const total = cart.reduce(
-    (sum, item) => sum + (item.price || 0) * item.quantity,
-    0
-  );
+  // const total = cart.reduce(
+  //   (sum, item) => sum + (item.price || 0) * item.quantity,
+  //   0
+  // );
 
-  const totalItems = cart.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  );
+  // const totalItems = cart.reduce(
+  //   (sum, item) => sum + item.quantity,
+  //   0
+  // );
 
   return (
     <MainLayout>
