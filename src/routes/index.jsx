@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
-import Products from "../pages/Product";
+import Products from "../pages/Products";
 import Product from "../pages/Product";
 import Category from "../pages/Category";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
-
 
 const AppRoutes = () => {
   return (

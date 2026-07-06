@@ -1,13 +1,13 @@
 const ProductSearch = ({ search, setSearch }) => {
   return (
-    <div className="w-full mb-10">
+    <div className="mb-10">
 
       <input
         type="text"
-        placeholder="Search medical products..."
+        placeholder="Search products..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
+        className="w-full border border-gray-300 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
       />
 
     </div>

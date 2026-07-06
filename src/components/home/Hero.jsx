@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Search } from "lucide-react";
 import HeroImage from "./HeroImage";
 
 const Hero = () => {
+  const navigate = useNavigate();
+const [search, setSearch] = useState("");
   return (
     <section className="bg-[#005EB8] text-white">
       <div className="max-w-7xl mx-auto px-6 py-20">
@@ -29,19 +32,31 @@ const Hero = () => {
             </p>
 
             {/* SEARCH BAR */}
-            <div className="mt-8 flex bg-white rounded-xl overflow-hidden max-w-xl">
+           <div className="mt-8 flex bg-white rounded-xl overflow-hidden max-w-xl">
 
-              <input
-                type="text"
-                placeholder="Search medical products..."
-                className="w-full px-4 py-3 text-gray-700 outline-none"
-              />
+  <input
+    type="text"
+    placeholder="Search medical products..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        navigate(`/products?search=${encodeURIComponent(search)}`);
+      }
+    }}
+    className="w-full px-4 py-3 text-gray-700 outline-none"
+  />
 
-              <button className="bg-secondary px-5 flex items-center justify-center">
-                <Search size={20} />
-              </button>
+  <button
+    onClick={() =>
+      navigate(`/products?search=${encodeURIComponent(search)}`)
+    }
+    className="bg-secondary px-5 flex items-center justify-center"
+  >
+    <Search size={20} />
+  </button>
 
-            </div>
+</div>
 
             {/* BUTTONS */}
             <div className="flex gap-4 mt-6">
