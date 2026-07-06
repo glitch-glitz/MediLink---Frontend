@@ -4,12 +4,14 @@ import { Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const {
-    cart,
-    increaseQuantity,
-    decreaseQuantity,
-    removeFromCart,
-  } = useCart();
+ const {
+  cart,
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromCart,
+  total,
+  totalItems,
+} = useCart();
 
   const total = cart.reduce(
     (sum, item) => sum + (item.price || 0) * item.quantity,
