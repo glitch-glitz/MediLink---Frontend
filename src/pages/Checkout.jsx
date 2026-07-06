@@ -211,9 +211,14 @@ Thank you.`
 
                 </div>
 
-                <button
+              <button
   onClick={handleCheckout}
-  className="w-full mt-8 bg-blue-700 text-white py-4 rounded-xl hover:bg-blue-800 transition"
+  disabled={cart.length === 0}
+  className={`w-full mt-8 py-4 rounded-xl transition font-semibold ${
+    cart.length === 0
+      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+      : "bg-blue-700 text-white hover:bg-blue-800"
+  }`}
 >
   Submit Order Request
 </button>
