@@ -26,7 +26,47 @@ const Checkout = () => {
       sum + (item.price || 0) * item.quantity,
     0
   );
+const handleCheckout = () => {
+  const orderItems = cart
+    .map((item) => {
+      const price = item.price
+        ? `KSh ${(item.price * item.quantity).toLocaleString()}`
+        : "Price on Request";
 
+      return `• ${item.quantity} × ${item.name} (${price})`;
+    })
+    .join("\n");
+
+  const message = encodeURIComponent(
+`Hello MediLink,
+
+I'd like to request the following order:
+
+${orderItems}
+
+Customer Details
+------------------------
+Name: ${form.name}
+Phone: ${form.phone}
+Email: ${form.email}
+Organization: ${form.organization}
+Location: ${form.location}
+
+Additional Notes:
+${form.notes}
+
+Subtotal: KSh ${subtotal.toLocaleString()}
+
+Kindly confirm availability and provide a quotation.
+
+Thank you.`
+  );
+
+  window.open(
+    `https://wa.me/254142629343?text=${message}`,
+    "_blank"
+  );
+};
   return (
     <MainLayout>
 
