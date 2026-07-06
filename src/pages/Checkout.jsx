@@ -27,13 +27,33 @@ const Checkout = () => {
     0
   );
 const handleCheckout = () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  if (!form.name.trim()) {
+    alert("Please enter your full name.");
+    return;
+  }
+
+  if (!form.phone.trim()) {
+    alert("Please enter your phone number.");
+    return;
+  }
+
+  if (!form.location.trim()) {
+    alert("Please enter your delivery location.");
+    return;
+  }
+
   const orderItems = cart
     .map((item) => {
-      const price = item.price
+      const total = item.price
         ? `KSh ${(item.price * item.quantity).toLocaleString()}`
         : "Price on Request";
 
-      return `• ${item.quantity} × ${item.name} (${price})`;
+      return `• ${item.quantity} × ${item.name} (${total})`;
     })
     .join("\n");
 
@@ -48,12 +68,12 @@ Customer Details
 ------------------------
 Name: ${form.name}
 Phone: ${form.phone}
-Email: ${form.email}
-Organization: ${form.organization}
+Email: ${form.email || "N/A"}
+Organization: ${form.organization || "N/A"}
 Location: ${form.location}
 
 Additional Notes:
-${form.notes}
+${form.notes || "None"}
 
 Subtotal: KSh ${subtotal.toLocaleString()}
 
@@ -88,21 +108,23 @@ Thank you.`
 
             <div className="grid md:grid-cols-2 gap-5">
 
-              <input
-                name="name"
-                placeholder="Full Name"
-                value={form.name}
-                onChange={handleChange}
-                className="border rounded-lg px-4 py-3"
-              />
+            <input
+  name="name"
+  placeholder="Full Name *"
+  value={form.name}
+  onChange={handleChange}
+  className="border rounded-lg px-4 py-3"
+  required
+/>
 
-              <input
-                name="phone"
-                placeholder="Phone Number"
-                value={form.phone}
-                onChange={handleChange}
-                className="border rounded-lg px-4 py-3"
-              />
+           <input
+  name="phone"
+  placeholder="Phone Number *"
+  value={form.phone}
+  onChange={handleChange}
+  className="border rounded-lg px-4 py-3"
+  required
+/>
 
               <input
                 name="email"
@@ -123,12 +145,13 @@ Thank you.`
             </div>
 
             <input
-              name="location"
-              placeholder="Delivery Location"
-              value={form.location}
-              onChange={handleChange}
-              className="border rounded-lg px-4 py-3 w-full mt-5"
-            />
+  name="location"
+  placeholder="Delivery Location *"
+  value={form.location}
+  onChange={handleChange}
+  className="border rounded-lg px-4 py-3 w-full mt-5"
+  required
+/>
 
             <textarea
               name="notes"
