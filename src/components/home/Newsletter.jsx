@@ -2,49 +2,57 @@ import { Mail } from "lucide-react";
 
 const Newsletter = () => {
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-[#005EB8] text-white rounded-3xl px-8 py-16 lg:px-20 text-center text-white">
-          {/* Icon */}
-          <div className="w-20 h-20 mx-auto rounded-full bg-secondary/20 flex items-center justify-center mb-8">
-            <Mail size={38} className="text-secondary" />
+    <section className="border-b border-slate-700">
+
+      <div className="max-w-7xl mx-auto px-6 py-10">
+
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+
+          {/* Left */}
+
+          <div className="flex items-center gap-4">
+
+            <div className="w-14 h-14 rounded-full bg-[#005EB8] flex items-center justify-center">
+              <Mail size={26} className="text-white" />
+            </div>
+
+            <div>
+
+              <h2 className="text-2xl font-bold text-white">
+                Subscribe to Our Newsletter
+              </h2>
+
+              <p className="text-gray-400 mt-1">
+                Get updates on new medical products, offers and healthcare news.
+              </p>
+
+            </div>
+
           </div>
 
-          {/* Heading */}
-          <h2 className="text-4xl lg:text-5xl font-bold">
-            Stay Updated
-          </h2>
+          {/* Right */}
 
-          <p className="mt-6 text-blue-100 max-w-2xl mx-auto leading-8 text-lg">
-            Subscribe to receive updates on new medical products,
-            special offers, healthcare solutions, and industry news
-            delivered straight to your inbox.
-          </p>
+          <form className="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
 
-          {/* Newsletter Form */}
-          <form className="mt-10 max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row bg-white rounded-xl overflow-hidden shadow-lg">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 text-gray-700 outline-none"
-              />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="bg-slate-800 border border-slate-600 rounded-lg px-5 py-3 text-white outline-none w-full sm:w-80"
+            />
 
-              <button
-                type="submit"
-                className="bg-secondary px-8 py-4 font-semibold hover:opacity-90 transition"
-              >
-                Subscribe
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="bg-[#005EB8] hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition"
+            >
+              Subscribe
+            </button>
+
           </form>
 
-          {/* Small Text */}
-          <p className="mt-6 text-sm text-blue-100">
-            No spam. Unsubscribe anytime.
-          </p>
         </div>
+
       </div>
+
     </section>
   );
 };

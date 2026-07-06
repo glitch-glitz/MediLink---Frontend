@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Brands from "../home/Brands";
-
+import Newsletter from "../home/Newsletter";
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white">
@@ -94,6 +94,8 @@ const Footer = () => {
               <p>info@medilink.co.ke</p>
 
             </div>
+            
+      
 
           </div>
 
@@ -102,7 +104,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-
+<Newsletter/> 
       <div className="border-t border-slate-700 py-6">
 
         <p className="text-center text-gray-400">

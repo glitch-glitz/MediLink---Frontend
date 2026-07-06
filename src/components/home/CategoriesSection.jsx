@@ -1,40 +1,29 @@
-import categories from "../../data/categories";
 import products from "../../data/products";
-import CategoryCard from "../category/CategoryCard";
+import ProductCard from "../product/ProductCard";
 
-const CategoriesSection = () => {
+const ProductsSection = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
-
       <div className="mb-8">
         <h2 className="text-3xl font-bold">
-          Shop by Category
+          Happy Shopping!
         </h2>
 
         <p className="text-gray-500 mt-2">
-          Browse our medical products by category.
+          Browse all our medical products.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-        {categories.map((category) => (
-          <CategoryCard
-            key={category.id}
-            title={category.name}
-            slug={category.slug}
-            total={
-              products.filter(
-                (product) => product.category === category.name
-              ).length
-            }
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
           />
         ))}
-
       </div>
-
     </section>
   );
 };
 
-export default CategoriesSection;
+export default ProductsSection;

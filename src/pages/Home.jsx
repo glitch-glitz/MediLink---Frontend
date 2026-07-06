@@ -6,7 +6,7 @@ import LatestProducts from "../components/home/LatestProducts";
 
 
 
-import Newsletter from "../components/home/Newsletter";
+
 
 import ProductGrid from "../components/product/ProductGrid";
 import products from "../data/products";
@@ -40,7 +40,6 @@ const Home = () => {
     
    
 
-      <Newsletter />
 
       
     </MainLayout>

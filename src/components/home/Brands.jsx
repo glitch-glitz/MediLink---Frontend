@@ -11,7 +11,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <div>c</div>
+    <div></div>
     // <section className="bg-gray-50 py-24">
     //   <div className="max-w-7xl mx-auto px-6">
     //     {/* Heading */}
