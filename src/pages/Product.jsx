@@ -1,10 +1,11 @@
-
+import toast from "react-hot-toast";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";import MainLayout from "../layouts/MainLayout";
 import products from "../data/products";
 import { ShoppingCart, MessageCircle, CheckCircle } from "lucide-react";
 import { useCart } from "../store/CartContext";
 import ProductGrid from "../components/product/ProductGrid";
+
 
 const Product = () => {
   const { slug } = useParams();
@@ -136,15 +137,19 @@ const relatedProducts = products.filter(
 
 </div>
               
-              <button
-               onClick={() =>
-  addToCart(product, quantity)
-}
-                className="bg-blue-700 text-white px-8 py-4 rounded-xl flex items-center gap-2 hover:bg-blue-800 transition"
-              >
-                <ShoppingCart size={20} />
-                Add to Cart
-              </button>
+           <button
+  onClick={() => {
+    addToCart(product, quantity);
+
+    toast.success(
+      `${quantity} × ${product.name} added to cart`
+    );
+  }}
+  className="bg-blue-700 text-white px-8 py-4 rounded-xl flex items-center gap-2 hover:bg-blue-800 transition"
+>
+  <ShoppingCart size={20} />
+  Add to Cart
+</button>
 
               <a
                 href={`https://wa.me/254700000000?text=${whatsappMessage}`}

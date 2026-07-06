@@ -19,7 +19,7 @@ const Home = () => {
       <CategoriesSection />
 
       {/* Featured Products */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      {/* <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-10">
           <h2 className="text-4xl font-bold">
             Featured Products
@@ -31,9 +31,9 @@ const Home = () => {
         </div>
 
         <ProductGrid products={products} />
-      </section>
+      </section> */}
 
-      <LatestProducts />
+      {/* <LatestProducts /> */}
 
      
 

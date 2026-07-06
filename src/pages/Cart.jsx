@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import MainLayout from "../layouts/MainLayout";
 import { useCart } from "../store/CartContext";
 import { Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
@@ -114,29 +115,38 @@ const Cart = () => {
                   <div className="flex items-center gap-3">
 
                     <button
-                      onClick={() => decreaseQuantity(item.id)}
-                      className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
-                    >
-                      <Minus size={18} />
-                    </button>
+  onClick={() => {
+    decreaseQuantity(item.id);
+    toast.success("Quantity updated");
+  }}
+  className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
+>
+  <Minus size={18} />
+</button>
 
                     <span className="font-bold text-lg w-8 text-center">
                       {item.quantity}
                     </span>
 
                     <button
-                      onClick={() => increaseQuantity(item.id)}
-                      className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
-                    >
-                      <Plus size={18} />
-                    </button>
-
-                    <button
-                      onClick={() => removeFromCart(item.id)}
-                      className="text-red-600 hover:text-red-700 ml-2"
-                    >
-                      <Trash2 size={22} />
-                    </button>
+  onClick={() => {
+    increaseQuantity(item.id);
+    toast.success("Quantity updated");
+  }}
+  className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
+>
+  <Plus size={18} />
+</button>
+ 
+                <button
+  onClick={() => {
+    removeFromCart(item.id);
+    toast.success(`${item.name} removed from cart`);
+  }}
+  className="text-red-600 hover:text-red-700 ml-4"
+>
+  <Trash2 size={20} />
+</button>
 
                   </div>
 
