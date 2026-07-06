@@ -1,34 +1,59 @@
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import ProductGrid from "../components/product/ProductGrid";
 import ProductSearch from "../components/product/ProductSearch";
 import products from "../data/products";
 
 const Products = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [availability, setAvailability] = useState("");
+  const [sort, setSort] = useState("");
 
-const search = searchParams.get("search") || "";
+  let filteredProducts = products.filter((product) => {
+    const matchesSearch =
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLowerCase()) ||
+      product.subcategory.toLowerCase().includes(search.toLowerCase());
 
-const setSearch = (value) => {
-  setSearchParams(
-    value ? { search: value } : {}
-  );
-};
+    const matchesCategory =
+      category === "" || product.category === category;
 
-  const filteredProducts = products.filter((product) => {
-    const term = search.toLowerCase();
+    const matchesAvailability =
+      availability === "" ||
+      (availability === "instock" && product.inStock) ||
+      (availability === "outofstock" && !product.inStock);
 
-    return (
-      product.name.toLowerCase().includes(term) ||
-      product.category.toLowerCase().includes(term) ||
-      product.subcategory.toLowerCase().includes(term) ||
-      (product.brand &&
-        product.brand.toLowerCase().includes(term))
-    );
+    return matchesSearch && matchesCategory && matchesAvailability;
   });
+
+  if (sort === "az") {
+    filteredProducts.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+  }
+
+  if (sort === "za") {
+    filteredProducts.sort((a, b) =>
+      b.name.localeCompare(a.name)
+    );
+  }
+
+  if (sort === "low") {
+    filteredProducts.sort(
+      (a, b) => (a.price || 999999) - (b.price || 999999)
+    );
+  }
+
+  if (sort === "high") {
+    filteredProducts.sort(
+      (a, b) => (b.price || 0) - (a.price || 0)
+    );
+  }
 
   return (
     <MainLayout>
+
       <section className="max-w-7xl mx-auto px-6 py-16">
 
         <div className="mb-10">
@@ -46,23 +71,18 @@ const setSearch = (value) => {
         <ProductSearch
           search={search}
           setSearch={setSearch}
+          category={category}
+          setCategory={setCategory}
+          availability={availability}
+          setAvailability={setAvailability}
+          sort={sort}
+          setSort={setSort}
         />
 
-        {filteredProducts.length > 0 ? (
-          <ProductGrid products={filteredProducts} />
-        ) : (
-          <div className="text-center py-20">
-            <h2 className="text-2xl font-semibold">
-              No products found
-            </h2>
-
-            <p className="text-gray-500 mt-2">
-              Try searching for another product.
-            </p>
-          </div>
-        )}
+        <ProductGrid products={filteredProducts} />
 
       </section>
+
     </MainLayout>
   );
 };
