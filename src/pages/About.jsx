@@ -37,12 +37,23 @@ const About = () => {
               Who We Are
             </h2>
 
-            <p className="text-gray-600 leading-8 mb-6">
-              MediLink Medical Supplies is a trusted supplier of quality
-              medical equipment, hospital furniture, laboratory supplies,
-              diagnostics, rehabilitation products, PPE and healthcare
-              consumables.
-            </p>
+           <p className="text-gray-600 leading-8 mb-6">
+  MediLink Medical Supplies is a trusted supplier of quality medical
+  equipment, hospital furniture, laboratory supplies, diagnostic
+  devices, rehabilitation products, personal protective equipment
+  (PPE), and healthcare consumables. We proudly serve hospitals,
+  clinics, laboratories, pharmacies, NGOs, government institutions,
+  and healthcare professionals across Kenya with genuine products,
+  competitive pricing, and reliable delivery services.
+</p>
+
+<p className="text-gray-600 leading-8 mb-6">
+  We are committed to improving healthcare by providing dependable
+  medical solutions sourced from reputable manufacturers and trusted
+  brands. Our focus on quality, integrity, and exceptional customer
+  service ensures that every client receives the right products to
+  support better patient care and operational excellence.
+</p>
 
             <p className="text-gray-600 leading-8">
               Our mission is to make healthcare products accessible,
@@ -145,9 +156,7 @@ const About = () => {
 
       </section>
 
-      {/* Trusted Brands */}
-
-      
+   
 
       {/* Testimonials */}
 

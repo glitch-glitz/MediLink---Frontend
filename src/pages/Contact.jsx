@@ -1,5 +1,5 @@
 import MainLayout from "../layouts/MainLayout";
-import CallToAction from "../components/home/CallToAction";
+
 import {
   Phone,
   Mail,
@@ -206,7 +206,7 @@ const Contact = () => {
 
       </section>
 
-      <CallToAction />
+    
 
     </MainLayout>
   );

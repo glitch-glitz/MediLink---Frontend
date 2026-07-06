@@ -4,8 +4,8 @@ import Hero from "../components/home/Hero";
 import CategoriesSection from "../components/home/CategoriesSection";
 import LatestProducts from "../components/home/LatestProducts";
 
-import Brands from "../components/home/Brands";
-import Testimonials from "../components/home/Testimonials";
+
+
 import Newsletter from "../components/home/Newsletter";
 
 import ProductGrid from "../components/product/ProductGrid";
@@ -37,9 +37,8 @@ const Home = () => {
 
      
 
-      <Brands />
-
-      <Testimonials />
+    
+   
 
       <Newsletter />
 
