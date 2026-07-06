@@ -21,7 +21,7 @@ const Navbar = () => {
       navigate("/products");
     }
   };
-
+const { totalItems } = useCart();
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
 
@@ -99,7 +99,7 @@ const Navbar = () => {
           />
 
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-            {cart.length}
+            {totalItems}
           </span>
 
         </Link>
