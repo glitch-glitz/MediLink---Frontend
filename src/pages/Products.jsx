@@ -7,15 +7,13 @@ import products from "../data/products";
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const search = searchParams.get("search") || "";
+const search = searchParams.get("search") || "";
 
-  const setSearch = (value) => {
-    if (value) {
-      setSearchParams({ search: value });
-    } else {
-      setSearchParams({});
-    }
-  };
+const setSearch = (value) => {
+  setSearchParams(
+    value ? { search: value } : {}
+  );
+};
 
   const filteredProducts = products.filter((product) => {
     const term = search.toLowerCase();

@@ -32,7 +32,7 @@ const [search, setSearch] = useState("");
             </p>
 
             {/* SEARCH BAR */}
-           <div className="mt-8 flex bg-white rounded-xl overflow-hidden max-w-xl">
+         <div className="mt-8 flex bg-white rounded-xl overflow-hidden max-w-xl">
 
   <input
     type="text"
