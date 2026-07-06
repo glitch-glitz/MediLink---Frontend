@@ -8,6 +8,7 @@ import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/about" element={<About />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

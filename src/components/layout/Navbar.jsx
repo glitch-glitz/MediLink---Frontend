@@ -56,9 +56,9 @@ const { totalItems } = useCart();
   About
 </Link>
 
-          <Link to="#">
-            Contact
-          </Link>
+         <Link to="/contact">
+  Contact
+</Link>
 
         </div>
 
