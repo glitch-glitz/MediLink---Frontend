@@ -1,4 +1,5 @@
 import categories from "../../data/categories";
+import products from "../../data/products";
 import CategoryCard from "../category/CategoryCard";
 
 const CategoriesSection = () => {
@@ -16,14 +17,20 @@ const CategoriesSection = () => {
       </div>
 
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+
         {categories.map((category) => (
           <CategoryCard
-  key={category.id}
-  title={category.title}
-  total={category.total}
-  slug={category.slug}
-/>
+            key={category.id}
+            title={category.name}
+            slug={category.slug}
+            total={
+              products.filter(
+                (product) => product.category === category.name
+              ).length
+            }
+          />
         ))}
+
       </div>
 
     </section>
