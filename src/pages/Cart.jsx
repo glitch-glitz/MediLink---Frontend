@@ -9,8 +9,17 @@ const Cart = () => {
     increaseQuantity,
     decreaseQuantity,
     removeFromCart,
-    total,
   } = useCart();
+
+  const total = cart.reduce(
+    (sum, item) => sum + (item.price || 0) * item.quantity,
+    0
+  );
+
+  const totalItems = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
 
   return (
     <MainLayout>
@@ -55,52 +64,76 @@ const Cart = () => {
 
                 <div
                   key={item.id}
-                  className="bg-white rounded-xl shadow p-5 flex justify-between items-center"
+                  className="bg-white rounded-xl shadow p-5 flex flex-col md:flex-row justify-between gap-6"
                 >
 
-                  <div>
+                  {/* Left */}
 
-                    <h2 className="font-semibold text-xl">
-                      {item.name}
-                    </h2>
+                  <div className="flex gap-5">
 
-                    <p className="text-gray-500">
-                      {item.category}
-                    </p>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-24 h-24 rounded-lg object-cover bg-gray-100"
+                    />
 
-                    <p className="mt-2 text-blue-700 font-bold">
-                      {item.price
-                        ? `KSh ${item.price.toLocaleString()}`
-                        : "Price on Request"}
-                    </p>
+                    <div>
+
+                      <h2 className="font-semibold text-xl">
+                        {item.name}
+                      </h2>
+
+                      <p className="text-gray-500">
+                        {item.category}
+                      </p>
+
+                      {item.price ? (
+                        <>
+                          <p className="mt-2 text-blue-700 font-bold">
+                            KSh {(item.price * item.quantity).toLocaleString()}
+                          </p>
+
+                          <p className="text-sm text-gray-500">
+                            {item.quantity} × KSh {item.price.toLocaleString()}
+                          </p>
+                        </>
+                      ) : (
+                        <p className="mt-2 font-bold text-blue-700">
+                          Price on Request
+                        </p>
+                      )}
+
+                    </div>
 
                   </div>
+
+                  {/* Right */}
 
                   <div className="flex items-center gap-3">
 
                     <button
                       onClick={() => decreaseQuantity(item.id)}
-                      className="bg-gray-100 p-2 rounded-lg"
+                      className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
                     >
                       <Minus size={18} />
                     </button>
 
-                    <span className="font-bold text-lg">
+                    <span className="font-bold text-lg w-8 text-center">
                       {item.quantity}
                     </span>
 
                     <button
                       onClick={() => increaseQuantity(item.id)}
-                      className="bg-gray-100 p-2 rounded-lg"
+                      className="bg-gray-100 hover:bg-gray-200 p-2 rounded-lg transition"
                     >
                       <Plus size={18} />
                     </button>
 
                     <button
                       onClick={() => removeFromCart(item.id)}
-                      className="text-red-600 ml-4"
+                      className="text-red-600 hover:text-red-700 ml-2"
                     >
-                      <Trash2 size={20} />
+                      <Trash2 size={22} />
                     </button>
 
                   </div>
@@ -113,33 +146,28 @@ const Cart = () => {
 
             {/* Order Summary */}
 
-            <div className="bg-slate-100 rounded-xl p-6 h-fit">
+            <div className="bg-slate-100 rounded-xl p-6 h-fit sticky top-24">
 
               <h2 className="text-2xl font-bold">
                 Order Summary
               </h2>
 
               <div className="flex justify-between mt-6">
-
-                <span>Items</span>
-
-                <span>{cart.length}</span>
-
+                <span>Total Items</span>
+                <span>{totalItems}</span>
               </div>
 
               <div className="flex justify-between mt-3">
-
-                <span>Total</span>
+                <span>Subtotal</span>
 
                 <span className="font-bold text-xl text-blue-700">
                   KSh {total.toLocaleString()}
                 </span>
-
               </div>
 
               <Link
                 to="/checkout"
-                className="block text-center mt-8 bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800"
+                className="block text-center mt-8 bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition"
               >
                 Proceed to Checkout
               </Link>
