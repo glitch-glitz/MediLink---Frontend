@@ -189,10 +189,11 @@ Thank you.`
                 </div>
 
                 <button
-                  className="w-full mt-8 bg-blue-700 text-white py-4 rounded-xl hover:bg-blue-800 transition"
-                >
-                  Submit Order Request
-                </button>
+  onClick={handleCheckout}
+  className="w-full mt-8 bg-blue-700 text-white py-4 rounded-xl hover:bg-blue-800 transition"
+>
+  Submit Order Request
+</button>
 
               </>
             )}
