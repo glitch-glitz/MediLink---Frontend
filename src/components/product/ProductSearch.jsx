@@ -1,3 +1,5 @@
+import categories from "../../data/categories";
+
 const ProductSearch = ({
   search,
   setSearch,
@@ -26,17 +28,18 @@ const ProductSearch = ({
         {/* Category */}
 
         <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="border rounded-lg px-4 py-3"
-        >
-          <option value="">All Categories</option>
-          <option>Diagnostics</option>
-          <option>Hospital Furniture</option>
-          <option>Laboratory</option>
-          <option>PPE</option>
-          <option>Medical Consumables</option>
-        </select>
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+  className="border rounded-lg px-4 py-3"
+>
+  <option value="">All Categories</option>
+
+  {categories.map((cat) => (
+    <option key={cat.id} value={cat.name}>
+      {cat.name}
+    </option>
+  ))}
+</select>
 
         {/* Availability */}
 

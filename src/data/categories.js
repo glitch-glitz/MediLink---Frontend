@@ -1,33 +1,39 @@
 const categories = [
   {
     id: 1,
-    title: "Diagnostics",
-    total: 42,
+    name: "Diagnostics",
+    slug: "diagnostics",
+    image: "/categories/diagnostics.jpg",
   },
   {
     id: 2,
-    title: "Hospital Furniture",
-    total: 18,
+    name: "Hospital Furniture",
+    slug: "hospital-furniture",
+    image: "/categories/hospital-furniture.jpg",
   },
   {
     id: 3,
-    title: "Laboratory Equipment",
-    total: 25,
+    name: "Laboratory",
+    slug: "laboratory",
+    image: "/categories/laboratory.jpg",
   },
   {
     id: 4,
-    title: "Surgical Instruments",
-    total: 31,
+    name: "PPE",
+    slug: "ppe",
+    image: "/categories/ppe.jpg",
   },
   {
     id: 5,
-    title: "PPE",
-    total: 56,
+    name: "Medical Consumables",
+    slug: "medical-consumables",
+    image: "/categories/consumables.jpg",
   },
   {
     id: 6,
-    title: "Medical Consumables",
-    total: 74,
+    name: "Rehabilitation",
+    slug: "rehabilitation",
+    image: "/categories/rehabilitation.jpg",
   },
 ];
 

@@ -18,10 +18,11 @@ const CategoriesSection = () => {
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
         {categories.map((category) => (
           <CategoryCard
-            key={category.id}
-            title={category.title}
-            total={category.total}
-          />
+  key={category.id}
+  title={category.title}
+  total={category.total}
+  slug={category.slug}
+/>
         ))}
       </div>
 
