@@ -11,44 +11,47 @@ const ProductSearch = ({
   setSort,
 }) => {
   return (
-    <div className="bg-white shadow rounded-2xl p-6 mb-10">
+    <div className="bg-white shadow rounded-xl p-4 mb-8">
 
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
 
         {/* Search */}
 
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-700"
+          className="col-span-2 lg:col-span-1 border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-700"
         />
 
         {/* Category */}
 
         <select
-  value={category}
-  onChange={(e) => setCategory(e.target.value)}
-  className="border rounded-lg px-4 py-3"
->
-  <option value="">All Categories</option>
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border rounded-lg px-3 py-2 text-sm"
+        >
+          <option value="">Category</option>
 
-  {categories.map((cat) => (
-    <option key={cat.id} value={cat.name}>
-      {cat.name}
-    </option>
-  ))}
-</select>
+          {categories.map((cat) => (
+            <option
+              key={cat.id}
+              value={cat.name}
+            >
+              {cat.name}
+            </option>
+          ))}
+        </select>
 
         {/* Availability */}
 
         <select
           value={availability}
           onChange={(e) => setAvailability(e.target.value)}
-          className="border rounded-lg px-4 py-3"
+          className="border rounded-lg px-3 py-2 text-sm"
         >
-          <option value="">Availability</option>
+          <option value="">Stock</option>
           <option value="instock">In Stock</option>
           <option value="outofstock">Out of Stock</option>
         </select>
@@ -58,13 +61,13 @@ const ProductSearch = ({
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="border rounded-lg px-4 py-3"
+          className="col-span-2 lg:col-span-1 border rounded-lg px-3 py-2 text-sm"
         >
           <option value="">Sort By</option>
-          <option value="az">A - Z</option>
-          <option value="za">Z - A</option>
-          <option value="low">Price: Low to High</option>
-          <option value="high">Price: High to Low</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="low">Lowest Price</option>
+          <option value="high">Highest Price</option>
         </select>
 
       </div>
