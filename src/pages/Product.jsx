@@ -259,7 +259,7 @@ useEffect(() => {
       </button>
 
       <a
-        href={`https://wa.me/254700000000?text=${whatsappMessage}`}
+        href={`https://wa.me/254142629343?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
         className="border border-green-600 text-green-700 px-6 py-3 rounded-xl flex justify-center items-center gap-2 hover:bg-green-50 transition"

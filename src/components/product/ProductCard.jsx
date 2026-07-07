@@ -64,7 +64,7 @@ const ProductCard = ({ product }) => {
           </button>
 
           <a
-            href={`https://wa.me/2541426293343?text=${whatsappMessage}`}
+            href={`https://wa.me/254142629343?text=${whatsappMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full border border-green-600 text-green-700 py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-green-50 transition"
