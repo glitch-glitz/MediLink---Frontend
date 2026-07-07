@@ -61,14 +61,14 @@ useEffect(() => {
 
       {/* Image */}
 
-      <div className="w-2/5 lg:w-full">
+      <div className="w-1/3 lg:w-full">
 
         <div className="bg-slate-50 rounded-2xl shadow-lg p-3 lg:p-8">
 
           <img
             src={product.images?.[selectedImage] || product.image}
             alt={product.name}
-            className="w-full h-52 lg:h-[450px] object-contain transition hover:scale-105"
+            className="w-full h-52 lg:h-60 lg:h-[450px] object-contain transition hover:scale-105"
           />
 
         </div>
@@ -77,7 +77,7 @@ useEffect(() => {
 
       {/* Mobile Summary */}
 
-      <div className="w-3/5 lg:hidden">
+      <div className="w-2/3 lg:hidden">
 
         <span className="text-xs text-cyan-600 font-semibold">
           {product.category}
@@ -159,7 +159,7 @@ useEffect(() => {
         {product.category}
       </span>
 
-      <h1 className="text-5xl font-bold mt-2">
+      <h1 className="text-xl lg:text-5xl font-bold mt-2">
         {product.name}
       </h1>
 
@@ -175,7 +175,7 @@ useEffect(() => {
 
       <div className="mt-6">
 
-        <p className="text-4xl font-bold text-blue-700">
+        <p className="text-2xl lg:text-4xl font-bold text-blue-700">
           {product.price
             ? `KSh ${product.price.toLocaleString()}`
             : "Price on Request"}
