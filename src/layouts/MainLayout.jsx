@@ -1,6 +1,7 @@
 import TopBar from "../components/layout/TopBar";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import BackToTop from "../components/BackToTop";
 
 const MainLayout = ({ children }) => {
   return (
@@ -15,7 +16,7 @@ const MainLayout = ({ children }) => {
       </main>
 
       <Footer />
-
+<BackToTop />
     </div>
   );
 };
