@@ -186,7 +186,7 @@ const Navbar = () => {
               <div className="flex flex-col gap-1 text-sm">
 
                <NavLink
-  to="/products"
+  to="/"
   onClick={() => setMobileMenuOpen(false)}
   className={({ isActive }) =>
     `px-4 py-3 rounded-lg transition ${
@@ -214,7 +214,7 @@ const Navbar = () => {
 </NavLink>
 
                 <NavLink
-  to="/products"
+  to="/category/all"
   onClick={() => setMobileMenuOpen(false)}
   className={({ isActive }) =>
     `px-4 py-3 rounded-lg transition ${
@@ -228,7 +228,7 @@ const Navbar = () => {
 </NavLink>
 
                 <NavLink
-  to="/products"
+  to="/about"
   onClick={() => setMobileMenuOpen(false)}
   className={({ isActive }) =>
     `px-4 py-3 rounded-lg transition ${
@@ -242,7 +242,7 @@ const Navbar = () => {
 </NavLink>
 
                 <NavLink
-  to="/products"
+  to="/contact"
   onClick={() => setMobileMenuOpen(false)}
   className={({ isActive }) =>
     `px-4 py-3 rounded-lg transition ${
