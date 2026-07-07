@@ -91,7 +91,7 @@ const Contact = () => {
             </h3>
 
             <a
-              href="https://wa.me/2541426293343"
+              href="https://wa.me/254142629343"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-600 mt-2 block"
