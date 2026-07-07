@@ -9,11 +9,13 @@ import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import ScrollToTop from "../pages/ScrollToTop";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
+        <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
