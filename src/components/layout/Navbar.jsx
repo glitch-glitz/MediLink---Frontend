@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
   ShoppingCart,
@@ -44,45 +44,64 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
+<div className="hidden lg:flex gap-8 font-medium">
 
-        <div className="hidden lg:flex gap-8 font-medium">
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive
+        ? "text-[#005EB8] font-semibold border-b-2 border-[#005EB8] pb-1"
+        : "hover:text-[#005EB8] transition"
+    }
+  >
+    Home
+  </NavLink>
 
-          <Link
-            to="/"
-            className="hover:text-[#005EB8] transition"
-          >
-            Home
-          </Link>
+  <NavLink
+    to="/category/all"
+    className={({ isActive }) =>
+      isActive
+        ? "text-[#005EB8] font-semibold border-b-2 border-[#005EB8] pb-1"
+        : "hover:text-[#005EB8] transition"
+    }
+  >
+    Categories
+  </NavLink>
 
-          <Link
-            to="/category/all"
-            className="hover:text-[#005EB8] transition"
-          >
-            Categories
-          </Link>
+  <NavLink
+    to="/products"
+    className={({ isActive }) =>
+      isActive
+        ? "text-[#005EB8] font-semibold border-b-2 border-[#005EB8] pb-1"
+        : "hover:text-[#005EB8] transition"
+    }
+  >
+    Products
+  </NavLink>
 
-          <Link
-            to="/products"
-            className="hover:text-[#005EB8] transition"
-          >
-            Products
-          </Link>
+  <NavLink
+    to="/about"
+    className={({ isActive }) =>
+      isActive
+        ? "text-[#005EB8] font-semibold border-b-2 border-[#005EB8] pb-1"
+        : "hover:text-[#005EB8] transition"
+    }
+  >
+    About
+  </NavLink>
 
-          <Link
-            to="/about"
-            className="hover:text-[#005EB8] transition"
-          >
-            About
-          </Link>
+  <NavLink
+    to="/contact"
+    className={({ isActive }) =>
+      isActive
+        ? "text-[#005EB8] font-semibold border-b-2 border-[#005EB8] pb-1"
+        : "hover:text-[#005EB8] transition"
+    }
+  >
+    Contact
+  </NavLink>
 
-          <Link
-            to="/contact"
-            className="hover:text-[#005EB8] transition"
-          >
-            Contact
-          </Link>
-
-        </div>
+</div>
 
         {/* Desktop Search */}
 
@@ -166,45 +185,75 @@ const Navbar = () => {
 
               <div className="flex flex-col gap-1 text-sm">
 
-                <Link
-                  to="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-[#005EB8]"
-                >
-                  Home
-                </Link>
+               <NavLink
+  to="/products"
+  onClick={() => setMobileMenuOpen(false)}
+  className={({ isActive }) =>
+    `px-4 py-3 rounded-lg transition ${
+      isActive
+        ? "bg-blue-50 text-[#005EB8] font-semibold"
+        : "hover:bg-blue-50 hover:text-[#005EB8]"
+    }`
+  }
+>
+ Home
+</NavLink>
 
-                <Link
-                  to="/products"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-[#005EB8]"
-                >
-                  Products
-                </Link>
+                <NavLink
+  to="/products"
+  onClick={() => setMobileMenuOpen(false)}
+  className={({ isActive }) =>
+    `px-4 py-3 rounded-lg transition ${
+      isActive
+        ? "bg-blue-50 text-[#005EB8] font-semibold"
+        : "hover:bg-blue-50 hover:text-[#005EB8]"
+    }`
+  }
+>
+  Products
+</NavLink>
 
-                <Link
-                  to="/category/all"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-[#005EB8]"
-                >
-                  Categories
-                </Link>
+                <NavLink
+  to="/products"
+  onClick={() => setMobileMenuOpen(false)}
+  className={({ isActive }) =>
+    `px-4 py-3 rounded-lg transition ${
+      isActive
+        ? "bg-blue-50 text-[#005EB8] font-semibold"
+        : "hover:bg-blue-50 hover:text-[#005EB8]"
+    }`
+  }
+>
+  Categories
+</NavLink>
 
-                <Link
-                  to="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-[#005EB8]"
-                >
-                  About
-                </Link>
+                <NavLink
+  to="/products"
+  onClick={() => setMobileMenuOpen(false)}
+  className={({ isActive }) =>
+    `px-4 py-3 rounded-lg transition ${
+      isActive
+        ? "bg-blue-50 text-[#005EB8] font-semibold"
+        : "hover:bg-blue-50 hover:text-[#005EB8]"
+    }`
+  }
+>
+  About
+</NavLink>
 
-                <Link
-                  to="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-[#005EB8]"
-                >
-                  Contact
-                </Link>
+                <NavLink
+  to="/products"
+  onClick={() => setMobileMenuOpen(false)}
+  className={({ isActive }) =>
+    `px-4 py-3 rounded-lg transition ${
+      isActive
+        ? "bg-blue-50 text-[#005EB8] font-semibold"
+        : "hover:bg-blue-50 hover:text-[#005EB8]"
+    }`
+  }
+>
+ Contact
+</NavLink>
 
               </div>
 
