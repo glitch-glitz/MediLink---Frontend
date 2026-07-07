@@ -9,6 +9,7 @@ import Checkout from "../pages/Checkout";
 import Admin from "../pages/Admin";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
