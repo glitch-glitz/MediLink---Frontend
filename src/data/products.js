@@ -431,6 +431,293 @@ const products = [
     "Rubber tips",
     "Lightweight",
   ],
+  },
+{
+  id: 13,
+  slug: "walking-stick",
+  name: "Walking Stick",
+
+  category: "Rehabilitation",
+  subcategory: "Mobility Aids",
+
+  brand: "MediLink",
+  sku: "ML-REH-002",
+
+  price: 1800,
+
+  image: "/products/walking-stick.jpg",
+
+  images: [
+    "/products/walking-stick.jpg",
+  ],
+
+  inStock: true,
+  featured: false,
+
+  shortDescription:
+    "Adjustable aluminium walking stick.",
+
+  description:
+    "Comfortable lightweight walking stick with ergonomic handle and anti-slip rubber base.",
+
+  specifications: [
+    "Height adjustable",
+    "Lightweight aluminium",
+    "Rubber tip",
+    "Comfort grip",
+  ],
+},
+
+{
+  id: 14,
+  slug: "oxygen-cylinder",
+  name: "Oxygen Cylinder",
+
+  category: "Medical Equipment",
+  subcategory: "Respiratory Care",
+
+  brand: "MediLink",
+  sku: "ML-ME-001",
+
+  price: null,
+
+  image: "/products/oxygen-cylinder.jpg",
+
+  images: [
+    "/products/oxygen-cylinder.jpg",
+  ],
+
+  inStock: true,
+  featured: true,
+
+  shortDescription:
+    "Portable medical oxygen cylinder for healthcare facilities.",
+
+  description:
+    "High-quality oxygen cylinder suitable for hospitals, ambulances and emergency response.",
+
+  specifications: [
+    "Steel cylinder",
+    "Medical grade",
+    "Portable",
+    "Pressure tested",
+  ],
+},
+
+{
+  id: 15,
+  slug: "oxygen-concentrator",
+  name: "Oxygen Concentrator",
+
+  category: "Medical Equipment",
+  subcategory: "Respiratory Care",
+
+  brand: "Yuwell",
+  sku: "ML-ME-002",
+
+  price: null,
+
+  image: "/products/oxygen-concentrator.jpg",
+
+  images: [
+    "/products/oxygen-concentrator.jpg",
+  ],
+
+  inStock: true,
+  featured: true,
+
+  shortDescription:
+    "Continuous oxygen supply for home and hospital use.",
+
+  description:
+    "Reliable oxygen concentrator with low-noise operation and adjustable oxygen flow.",
+
+  specifications: [
+    "5L oxygen output",
+    "Low noise",
+    "Energy efficient",
+    "Digital display",
+  ],
+},
+
+{
+  id: 16,
+  slug: "nebulizer",
+  name: "Nebulizer Machine",
+
+  category: "Medical Equipment",
+  subcategory: "Respiratory Care",
+
+  brand: "Omron",
+  sku: "ML-ME-003",
+
+  price: 6500,
+
+  image: "/products/nebulizer.jpg",
+
+  images: [
+    "/products/nebulizer.jpg",
+  ],
+
+  inStock: true,
+  featured: false,
+
+  shortDescription:
+    "Compressor nebulizer for effective respiratory treatment.",
+
+  description:
+    "Compact nebulizer designed for fast and efficient medication delivery.",
+
+  specifications: [
+    "Low noise",
+    "Compact",
+    "Adult & child masks",
+    "Easy to clean",
+  ],
+},
+
+{
+  id: 17,
+  slug: "suction-machine",
+  name: "Portable Suction Machine",
+
+  category: "Medical Equipment",
+  subcategory: "Emergency Equipment",
+
+  brand: "MediLink",
+  sku: "ML-ME-004",
+
+  price: null,
+
+  image: "/products/suction-machine.jpg",
+
+  images: [
+    "/products/suction-machine.jpg",
+  ],
+
+  inStock: true,
+  featured: false,
+
+  shortDescription:
+    "Portable medical suction unit.",
+
+  description:
+    "Reliable suction machine for hospitals, clinics and emergency medical services.",
+
+  specifications: [
+    "Portable",
+    "Low noise",
+    "Powerful suction",
+    "Easy maintenance",
+  ],
+},
+
+{
+  id: 18,
+  slug: "infrared-thermometer",
+  name: "Infrared Thermometer",
+
+  category: "Diagnostics",
+  subcategory: "Thermometers",
+
+  brand: "Omron",
+  sku: "ML-DIAG-006",
+
+  price: 2800,
+
+  image: "/products/infrared-thermometer.jpg",
+
+  images: [
+    "/products/infrared-thermometer.jpg",
+  ],
+
+  inStock: true,
+  featured: false,
+
+  shortDescription:
+    "Non-contact infrared thermometer.",
+
+  description:
+    "Fast and accurate forehead thermometer suitable for hospitals and home use.",
+
+  specifications: [
+    "1-second reading",
+    "LCD display",
+    "Fever alarm",
+    "Memory function",
+  ],
+},
+
+{
+  id: 19,
+  slug: "digital-weighing-scale",
+  name: "Digital Weighing Scale",
+
+  category: "Diagnostics",
+  subcategory: "Patient Monitoring",
+
+  brand: "Camry",
+  sku: "ML-DIAG-007",
+
+  price: 3500,
+
+  image: "/products/weighing-scale.jpg",
+
+  images: [
+    "/products/weighing-scale.jpg",
+  ],
+
+  inStock: true,
+  featured: false,
+
+  shortDescription:
+    "Digital body weighing scale.",
+
+  description:
+    "Accurate digital weighing scale with tempered glass platform and LCD display.",
+
+  specifications: [
+    "180kg capacity",
+    "LCD screen",
+    "Auto shut-off",
+    "Tempered glass",
+  ],
+},
+
+{
+  id: 20,
+  slug: "glucometer",
+  name: "Blood Glucose Meter",
+
+  category: "Diagnostics",
+  subcategory: "Diabetes Care",
+
+  brand: "Accu-Chek",
+  sku: "ML-DIAG-008",
+
+  price: 4500,
+
+  image: "/products/glucometer.jpg",
+
+  images: [
+    "/products/glucometer.jpg",
+  ],
+
+  inStock: true,
+  featured: true,
+
+  shortDescription:
+    "Portable blood sugar testing kit.",
+
+  description:
+    "Accurate glucometer with quick results for diabetes management.",
+
+  specifications: [
+    "5-second results",
+    "Memory storage",
+    "Test strips included",
+    "Compact design",
+  ],
 },
 ];
 
