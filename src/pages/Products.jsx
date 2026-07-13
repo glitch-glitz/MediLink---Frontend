@@ -1,29 +1,43 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getProducts } from "../api/products";
 import MainLayout from "../layouts/MainLayout";
 import ProductGrid from "../components/product/ProductGrid";
 import ProductSearch from "../components/product/ProductSearch";
-import products from "../data/products";
-
 const Products = () => {
-  const [search, setSearch] = useState("");
+  const [products, setProducts] = useState([]);
+
+const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [availability, setAvailability] = useState("");
   const [sort, setSort] = useState("");
+
+  useEffect(() => {
+  const loadProducts = async () => {
+    try {
+      const data = await getProducts();
+      setProducts(data);
+    } catch (err) {
+      console.error("Failed to load products:", err);
+    }
+  };
+
+  loadProducts();
+}, []);
 
   let filteredProducts = products.filter((product) => {
     const matchesSearch =
       product.name.toLowerCase().includes(search.toLowerCase()) ||
       product.category.toLowerCase().includes(search.toLowerCase()) ||
-      product.subcategory.toLowerCase().includes(search.toLowerCase());
-
+    (product.subcategory || "")
+  .toLowerCase()
+  .includes(search.toLowerCase())
     const matchesCategory =
       category === "" || product.category === category;
 
     const matchesAvailability =
-      availability === "" ||
-      (availability === "instock" && product.inStock) ||
-      (availability === "outofstock" && !product.inStock);
-
+  availability === "" ||
+  (availability === "instock" && product.in_stock) ||
+  (availability === "outofstock" && !product.in_stock);
     return matchesSearch && matchesCategory && matchesAvailability;
   });
 
